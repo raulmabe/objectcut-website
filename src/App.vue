@@ -1,29 +1,43 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div>
+    <div class="columns is-centered mb-0">
+      <div class="column is-multiline is-10  gapless">
+        <Hero />
+      </div>
+    </div>
+
+    <div class="columns mb-0 is-desktop is-vcentered  main-content">
+      <div class="column ">
+        <MidContent />
+      </div>
+    </div>
+
+    <div class="columns is-gapless">
+      <div class="column"><Footer /></div>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+<script>
+import MidContent from "./components/MidContent.vue";
+import Footer from "./components/Footer.vue";
+import Hero from "./components/Hero.vue";
 
-export default Vue.extend({
-  name: 'App',
+export default {
+  name: "App",
+  title: "Image background removal",
   components: {
-    HelloWorld
-  }
-});
+    Hero,
+    MidContent,
+    Footer,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+@import "styles/bulma";
+
+.main-content {
+  min-height: 60vh;
 }
 </style>
