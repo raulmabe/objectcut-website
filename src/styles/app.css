@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+  }
+  h1 {
+    @apply text-primary;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-size: 6rem;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  .img-mascota-auth {
+    @apply h-20;
+  }
+
+  .form-control {
+    @apply w-full;
+    border-bottom: 1px solid;
+    @apply border-primary;
+  }
+  input {
+    @apply border-none   bg-transparent;
+  }
+  input:focus {
+    @apply outline-none;
+  }
+  input[type="checkbox"] {
+    visibility: hidden;
+  }
+  input[type="checkbox"] + label:before {
+    border: 1px solid;
+    @apply border-gray-500 inline-block h-4 w-4 p-0 rounded mr-2;
+    content: "\00a0";
+  }
+  input[type="checkbox"]:checked + label:before {
+    @apply bg-primary text-white text-center border-none;
+    content: "\2713";
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .bg-gradient-primary-light {
+    @apply bg-gradient-to-r from-primaryLight to-secondaryLight;
+  }
+
+  .skeleton {
+    @apply block bg-gray-400 animate-pulse;
+  }
+
+  .grid-nav-main-footer {
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .btn {
+    @apply py-2 px-4 rounded-full relative text-center cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-primary text-white shadow;
+  }
+  .btn-primary:hover {
+    @apply bg-gradient-primary-light;
+  }
+
+  .btn:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .btn.is-loading {
+    color: transparent !important;
+    pointer-events: none;
+  }
+  .btn.is-loading::after {
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid white;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    top: calc(50% - (1em / 2));
+    left: calc(50% - (1em / 2));
+    position: absolute !important;
+    box-sizing: inherit;
+    @apply rounded-full animate-spin;
+  }
+
+  .disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-primary text-transparent bg-clip-text;
+  }
+
+  a {
+    @apply gradient-text;
+  }
+}

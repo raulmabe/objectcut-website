@@ -1,17 +1,15 @@
 <template>
-  <div class="has-text-centered">
-    <div class="mb-1">
-      <a
-        class="button is-primary"
-        v-bind:class="{ 'is-loading': loading, 'is-disabled': !valid }"
-        v-on:click="submitURL"
-        :disabled="!valid"
-      >
-        Magic ✨
-      </a>
-    </div>
+  <div class="flex flex-col items-center my-5 ">
+    <span
+      class="btn btn-primary"
+      v-bind:class="{ 'is-loading': loading, disabled: !valid }"
+      v-on:click="submitURL"
+      :disabled="!valid"
+    >
+      Magic ✨
+    </span>
     <div>
-      <strong class="has-text-primary"> 94%</strong>
+      <strong class="gradient-text"> 98%</strong>
       success rate
     </div>
   </div>

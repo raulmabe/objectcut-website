@@ -1,15 +1,10 @@
 <template>
-  <div>
+  <div class="flex flex-col items-center my-5 ">
     <span v-if="valid">
-      <img v-bind:src="url" />
+      <img :src="url" class="h-64 w-64 rounded object-contain" />
     </span>
-    <span v-else>
-      <b-skeleton
-        position="is-centered"
-        height="200px"
-        width="200px"
-      ></b-skeleton>
-    </span>
+
+    <span v-else class="skeleton h-64 w-64 rounded"> </span>
   </div>
 </template>
 

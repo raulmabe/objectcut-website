@@ -1,20 +1,8 @@
 <template>
-  <div>
-    <div class="columns is-centered mb-0">
-      <div class="column is-multiline is-10  gapless">
-        <Hero />
-      </div>
-    </div>
-
-    <div class="columns mb-0 is-desktop is-vcentered  main-content">
-      <div class="column ">
-        <MidContent />
-      </div>
-    </div>
-
-    <div class="columns is-gapless">
-      <div class="column"><Footer /></div>
-    </div>
+  <div class="grid grid-nav-main-footer h-screen w-screen overflow-auto bg-gray-200 text-gray-700">
+    <Hero/>
+    <MidContent />
+   <Footer />
   </div>
 </template>
 
@@ -25,7 +13,7 @@ import Hero from "./components/Hero.vue";
 
 export default {
   name: "App",
-  title: "Image background removal",
+  title: "UI ObjectCut",
   components: {
     Hero,
     MidContent,
@@ -34,10 +22,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-@import "styles/bulma";
-
-.main-content {
-  min-height: 60vh;
-}
-</style>
+<style src="@/styles/app.css">

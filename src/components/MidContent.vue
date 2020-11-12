@@ -1,18 +1,20 @@
 <template>
-  <div>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-8"><InputURL /></div>
-    </div>
-    <div class="columns is-centered is-vcentered ">
-      <div class="column  has-text-centered">
-        <MyImage :valid="isBaseValid" :url="baseURL" />
-      </div>
-      <div class="column is-narrow has-text-centered">
-        <MagicButton />
-      </div>
-      <div class="column  has-text-centered">
-        <MyImage :valid="isGeneratedValid" :url="generatedURL" />
-      </div>
+  <div class="flex flex-col justify-evenly items-center ">
+    <InputURL />
+    <div
+      class="flex flex-row flex-wrap flex-grow w-full justify-center items-center "
+    >
+      <MyImage
+        :valid="isBaseValid"
+        :url="baseURL"
+        class="w-full md:w-auto mx-5"
+      />
+      <MagicButton class="w-full md:w-auto mx-5" />
+      <MyImage
+        :valid="isGeneratedValid"
+        :url="generatedURL"
+        class="w-full md:w-auto mx-5"
+      />
     </div>
   </div>
 </template>

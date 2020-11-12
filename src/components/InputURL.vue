@@ -1,12 +1,43 @@
 <template>
-  <div>
-    <b-field
-      v-bind:label="getMessage()"
-      :custom-class="{ 'has-text-danger': hasErrored }"
-      v-bind:type="{ 'is-primary': valid }"
-    >
-      <b-input :value="url" @input="changeURL"> </b-input>
-    </b-field>
+  <div class="flex flex-col w-11/12 md:w-1/3">
+    <div class="flex flex-row flex-grow">
+      <p class="flex flex-grow " :class="{ 'text-danger': hasErrored }">
+        Insert your RapidAPI Key
+      </p>
+    </div>
+
+    <input
+      class="form-input text-gray-900 mb-8"
+      v-model="key"
+      @input="changeKey"
+    />
+
+    <div class="flex flex-row flex-grow">
+      <p class="flex flex-grow " :class="{ 'text-danger': hasErrored }">
+        {{ getMessage() }}
+      </p>
+      <p :class="{ 'text-danger': !valid, 'text-primaryLight': valid }">
+        {{ valid ? "Valid" : "Invalid" }}
+      </p>
+    </div>
+
+    <input
+      class="form-input text-gray-900 mb-8"
+      v-model="url"
+      @input="changeURL"
+    />
+
+    <div class="block">
+      <p>To remove</p>
+      <select
+        class="form-select text-gray-900 mb-8"
+        v-model="toRemove"
+        @change="changeToRemove"
+      >
+        <option value="background" selected>background</option>
+        <option value="foreground">foreground</option>
+      </select>
+    </div>
   </div>
 </template>
 
@@ -16,6 +47,8 @@ export default {
   data() {
     return {
       url: "",
+      key: "",
+      toRemove: "background",
     };
   },
   computed: {
@@ -39,15 +72,16 @@ export default {
         ? "Cool one 👍🏼 !"
         : "Insert a valid image URL";
     },
-    changeURL(url) {
-      this.url = url;
+    changeURL(event) {
+      console.log(`This url is ${this.url}`);
       this.$store.commit("setBaseURL", this.url);
+    },
+    changeKey(event) {
+      this.$store.commit("setKey", this.key);
+    },
+    changeToRemove(event) {
+      this.$store.commit("setToRemove", this.toRemove);
     },
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-$success: red;
-</style>
