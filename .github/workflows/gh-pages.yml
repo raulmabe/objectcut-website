@@ -1,0 +1,43 @@
+on:
+  push:
+    branches: [ main ]
+
+name: Deploy to GitHub pages
+
+jobs:
+
+  gh-pages:
+
+    name: Deploy to GH pages
+    runs-on: ubuntu-latest
+    env:
+      node-vesion: 15.x
+      cname: demo.objectcut.com
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Use Node.js ${{ env.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ env.node-version }}
+
+    - name: Create temporary NPM cache
+      run: npm install --cache /tmp/empty-cache
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run-script build
+
+    - name: Create CNAME
+      run: echo '${{ env.cname }}' > dist/CNAME
+    
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@3.6.2
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: dist
