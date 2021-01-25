@@ -17,7 +17,7 @@
       <p>
         <strong>API</strong> by
         <a href="https://objectcut.com/">ObjectCut ✂️</a> and
-        <strong>website</strong> by
+        <strong>demo</strong> by
         <a href="https://raulmabe.dev">Raul Mabe ☕️</a>. The source code is
         licensed
         <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The

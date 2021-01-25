@@ -1,0 +1,14 @@
+{
+    "title": "Demo for ObjectCut",
+    "version": "Official demo website that connects with the ObjectCut API. This API cuts the main object of an image automagically",
+    "url": "https://demo.objectcut.com", 
+    "tag_tools": ["vuejs", "vuex","nodeJS"],
+    "platforms": ["Web"],
+    "link": "https://demo.objectcut.com", 
+    "link_text": "Visit demo", 
+  
+    "assets": ["https://res.cloudinary.com/mabe-portfolio/image/upload/v1611600324/objectcut/Captura_de_pantalla_2021-01-25_a_las_19.45.10_wkmp7x.png"],
+    "assets_is_vertical": [false],
+    "assets_is_image": [true],
+    "assets_platform": ["web"]
+  }
