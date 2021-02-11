@@ -1,7 +1,7 @@
 {
     "title": "Demo for ObjectCut",
     "version": "Official demo website that connects with the ObjectCut API. This API cuts the main object of an image automagically",
-    "url": "https://demo.objectcut.com", 
+    "url": "objectcut.com", 
     "tag_tools": ["vuejs", "vuex","nodeJS", "opensource"],
     "platforms": ["Web"],
     "link": "https://demo.objectcut.com", 
